@@ -19,6 +19,17 @@ public class FragOne extends Fragment {
     private Context context;
     private TextView txt;
 
+ /*   public static Fragment newInstance(String text, int color) {
+        Fragment frag = new FragOne();
+//        Bundle args = new Bundle();
+//        args.putString(ARG_TEXT, text);
+//        args.putInt(ARG_COLOR, color);
+//        frag.setArguments(args);
+        return frag;
+    }*/
+
+
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

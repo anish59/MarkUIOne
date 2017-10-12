@@ -1,0 +1,8 @@
+
+----------------------------button bubble press animation----------------------------------------
+ScaleAnimation scale = new ScaleAnimation(0, 1, 0, 1
+                            ,ScaleAnimation.RELATIVE_TO_SELF, .5f, ScaleAnimation.RELATIVE_TO_SELF, .5f);
+                scale.setDuration(300);
+                scale.setInterpolator(new OvershootInterpolator());
+                btnStartAnime.startAnimation(scale);
+--------------------------------------------------------------------------------------------------

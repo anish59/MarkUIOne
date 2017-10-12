@@ -9,11 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".blurrImage.BlurrActivity">
+        <activity android:name=".blurrImage.BlurrActivity" />
+        <!-- <activity android:name=".blurrImage.BlurrActivity"></activity> -->
+        <activity android:name=".fragmentsDemo.TabActivity" />
+        <activity android:name=".fragmentsDemo.CustomTabActivity" />
+        <activity android:name=".fragmentsDemo.BottomTabActitivity"></activity>
+        <activity
+            android:name=".animationDemo.SuperManActivity"
+            android:screenOrientation="landscape">
 
         </activity>
-        <!-- <activity android:name=".blurrImage.BlurrActivity"></activity> -->
-        <activity android:name=".fragmentsDemo.TabActivity">
+        <activity android:name=".animationDemo.AnimationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

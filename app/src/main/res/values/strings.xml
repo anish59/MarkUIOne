@@ -2,4 +2,7 @@
     <string name="app_name">MarkUIOne</string>
     <string name="hello">hello</string>
     <string name="hello_world">Hello World</string>
+    <string name="car_wash">Wash</string>
+    <string name="taxi">Taxi</string>
+    <string name="car">car</string>
 </resources>
