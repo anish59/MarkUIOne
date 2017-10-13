@@ -13,13 +13,15 @@
         <!-- <activity android:name=".blurrImage.BlurrActivity"></activity> -->
         <activity android:name=".fragmentsDemo.TabActivity" />
         <activity android:name=".fragmentsDemo.CustomTabActivity" />
-        <activity android:name=".fragmentsDemo.BottomTabActitivity"></activity>
+        <activity android:name=".fragmentsDemo.BottomTabActitivity" />
         <activity
             android:name=".animationDemo.SuperManActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape" />
+        <activity android:name=".animationDemo.AnimationActivity"></activity>
+        <activity android:name=".animationDemo.AnimationActivity2">
 
         </activity>
-        <activity android:name=".animationDemo.AnimationActivity">
+        <activity android:name=".animationDemo.AnimationActivity3">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
