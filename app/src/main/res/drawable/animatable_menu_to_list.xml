@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_menu_animatable.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_list_menu">
+    <target
+        android:name="menuList"
+        android:animation="@anim/morph_menu_list" />
+    <target
+        android:name="rotationList"
+        android:animation="@anim/clockwise_rotation2" />
+</animated-vector>

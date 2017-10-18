@@ -17,11 +17,12 @@
         <activity
             android:name=".animationDemo.SuperManActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".animationDemo.AnimationActivity"></activity>
-        <activity android:name=".animationDemo.AnimationActivity2">
+        <activity android:name=".animationDemo.AnimationActivity" />
+        <activity android:name=".animationDemo.AnimationActivity2" />
+        <activity android:name=".animationDemo.AnimationActivity3">
 
         </activity>
-        <activity android:name=".animationDemo.AnimationActivity3">
+        <activity android:name=".animationDemo.morphing_anim.MorphActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

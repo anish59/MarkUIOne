@@ -1,0 +1,11 @@
+<objectAnimator
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="500"
+    android:propertyName="pathData"
+    android:valueFrom=  "M2 0,L2 60,M0 60,L60 60,M57 60,L57 0,M60 0,L0 0"
+    android:valueTo="M0 30,L60 30,M30 0,L30 60,M30 30, L30 30,M30 30, L30 30"
+    android:valueType="pathType"/>
+<!--
+
+    android:valueFrom="M0 30,L60 30,M30 0,L30 60,M30 30, L30 30,M30 30, L30 30"
+    android:valueTo=  "M2 0,L2 60,M0 60,L60 60,M57 60,L57 0,M60 0,L0 0"-->

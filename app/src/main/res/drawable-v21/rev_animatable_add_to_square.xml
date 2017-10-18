@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_menu_animatable.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_add">
+    <target
+        android:name="menu1"
+        android:animation="@anim/rev_morph_add_square" />
+    <target
+        android:name="rotation1"
+        android:animation="@anim/clock_wise_rotation_1" />
+</animated-vector>

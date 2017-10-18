@@ -1,0 +1,10 @@
+<!-- res/drawable/ic_menu_animatable.xml -->
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/vector_hamberg">
+    <target
+        android:name="menu"
+        android:animation="@anim/rev_morph_hamberg_arrow" />
+    <target
+        android:name="rotation"
+        android:animation="@anim/clockwise_rotation" />
+</animated-vector>

@@ -1,0 +1,25 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportHeight="100"
+    android:viewportWidth="100">
+    <group
+        android:name="rotationList"
+        android:pivotX="50"
+        android:pivotY="50">
+        <path
+            android:name="menuList"
+
+            android:pathData="M0 0,L80 0,M10 10,L70 10,M20 20,L60 20,M30 30,L50 30"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="6" />
+
+        <!--list-->
+  <!--      android:pathData="M30 10,35 10,
+        M45 10,L50 10,
+        M30 25,L35 25,
+        M45 25,L50 25"-->
+
+
+    </group>
+</vector>
