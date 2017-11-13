@@ -19,15 +19,15 @@
             android:screenOrientation="landscape" />
         <activity android:name=".animationDemo.AnimationActivity" />
         <activity android:name=".animationDemo.AnimationActivity2" />
-        <activity android:name=".animationDemo.AnimationActivity3">
-
-        </activity>
-        <activity android:name=".animationDemo.morphing_anim.MorphActivity">
+        <activity android:name=".animationDemo.AnimationActivity3"></activity>
+        <activity android:name=".animationDemo.morphing_anim.MorphActivity"></activity>
+        <activity android:name=".IconicCardViewDemoActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
