@@ -65,10 +65,11 @@ public class IconicCardView extends LinearLayout {
         imgHolder.setImageDrawable(imgSrc);
 
         CardView cardView = (CardView) getRootView().findViewById(R.id.cardHolder);
-        cardView.setMinimumHeight(((imgHeight * 50) / 100) + imgHeight);
+        cardView.setMinimumHeight(2 * imgHeight);
 
-        int sumHeight = ((imgHeight * 50) / 100) + imgHeight;
-        System.out.println("imgMin_ht: " + sumHeight + "    " + imgHeight);
+//        cardView.setMinimumHeight(((imgHeight * 100) / 100) + imgHeight);
+//        int sumHeight = ((imgHeight * 100) / 100) + imgHeight;
+//        System.out.println("imgMin_ht: " + sumHeight + "    " + imgHeight);
 
         insideContainer = (LinearLayout) getRootView().findViewById(R.id.insideContainer);
         ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
