@@ -1,15 +1,11 @@
 package com.markuione;
 
-import android.animation.AnimatorInflater;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-       btnClick = (Button) findViewById(R.id.btnClick);
+        btnClick = (Button) findViewById(R.id.btnClick);
         this.card = (CardView) findViewById(R.id.card);
         this.note = (TextView) findViewById(R.id.note);
 
