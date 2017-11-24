@@ -7,4 +7,7 @@
     <string name="car">car</string>
     <string name="reset">Reset</string>
     <string name="draw">Draw</string>
+    <string name="select_year">Select Year</string>
+    <string name="_2017">2017</string>
+    <string name="show_year_picker">show year picker</string>
 </resources>

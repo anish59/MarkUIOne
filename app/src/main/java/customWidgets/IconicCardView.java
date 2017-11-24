@@ -2,17 +2,16 @@ package customWidgets;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.CardView;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
 import com.markuione.R;
 
@@ -21,12 +20,15 @@ import com.markuione.R;
  */
 
 public class IconicCardView extends LinearLayout {
+    private int cardBgColor;
     private int cardElevation;
     private Drawable imgSrc;
     private int imgWidth;
     private int imgHeight;
     private Context context;
     private LinearLayout insideContainer;
+    private CircleImageView imgHolder;
+    private CardView cardView;
 
     public IconicCardView(Context context) {
         super(context);
@@ -42,6 +44,7 @@ public class IconicCardView extends LinearLayout {
             imgHeight = (int) a.getDimension(R.styleable.IconicCardView_imgHeight, getResources().getDimension(R.dimen.img_dimens));
             cardElevation = (int) a.getDimension(R.styleable.IconicCardView_cardElevation, getResources().getDimension(R.dimen.card_elevation));
             imgSrc = a.getDrawable(R.styleable.IconicCardView_imgSrc);
+            cardBgColor = a.getColor(R.styleable.IconicCardView_cardBgColor, 0);
         } finally {
             a.recycle();
         }
@@ -59,24 +62,28 @@ public class IconicCardView extends LinearLayout {
     }
 
     private void SetUpViews() {
-        CircleImageView imgHolder = (CircleImageView) getRootView().findViewById(R.id.imgHolder);
+        imgHolder = (CircleImageView) getRootView().findViewById(R.id.imgHolder);
+        cardView = (CardView) getRootView().findViewById(R.id.cardHolder);
+        insideContainer = (LinearLayout) getRootView().findViewById(R.id.insideContainer);
+
+
         imgHolder.getLayoutParams().width = imgWidth;
         imgHolder.getLayoutParams().height = imgHeight;
         imgHolder.setImageDrawable(imgSrc);
 
-        CardView cardView = (CardView) getRootView().findViewById(R.id.cardHolder);
-        cardView.setMinimumHeight(2 * imgHeight);
 
-//        cardView.setMinimumHeight(((imgHeight * 100) / 100) + imgHeight);
-//        int sumHeight = ((imgHeight * 100) / 100) + imgHeight;
-//        System.out.println("imgMin_ht: " + sumHeight + "    " + imgHeight);
+        cardView.setMinimumHeight(2 * imgHeight);//setting cardView minimum height
 
-        insideContainer = (LinearLayout) getRootView().findViewById(R.id.insideContainer);
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();
+
+        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) cardView.getLayoutParams();//setting inside container
         marginLayoutParams.setMargins((imgWidth / 2) - cardElevation, 0, 0, 0);
 
         cardView.setCardElevation(cardElevation);
-        ((FrameLayout.LayoutParams) insideContainer.getLayoutParams()).setMargins(imgWidth / 2, 0, 0, 0);
+        ((FrameLayout.LayoutParams) insideContainer.getLayoutParams()).setMargins(imgWidth / 2+cardElevation, 0, 0, 0);
+
+        cardView.setCardBackgroundColor(cardBgColor);
+//        insideContainer.setBackgroundColor(cardBgColor);
+
     }
 
     public void addInsideView(View view) {

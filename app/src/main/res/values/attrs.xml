@@ -13,6 +13,7 @@
         <attr name="imgWidth" format="dimension" />
         <attr name="cardElevation" format="dimension" />
         <attr name="imgSrc" format="reference" />
+        <attr name="cardBgColor" format="color" />
     </declare-styleable>
 
 </resources>
