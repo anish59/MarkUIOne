@@ -10,4 +10,8 @@
     <string name="select_year">Select Year</string>
     <string name="_2017">2017</string>
     <string name="show_year_picker">show year picker</string>
+    <string name="may">May</string>
+    <string name="select_month">Select Month</string>
+    <string name="show_month_picker">Show Month Picker</string>
+    <string name="myPicker">MyPicker</string>
 </resources>

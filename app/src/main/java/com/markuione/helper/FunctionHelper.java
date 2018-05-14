@@ -32,7 +32,6 @@ public class FunctionHelper {
         return dp;
     }
 
-
     public static List<String> getDaysBetweenDates(Date startdate, Date enddate, String format) {
         List<Date> dates = new ArrayList<Date>();
         List<String> dateStrings = new ArrayList<>();

@@ -16,6 +16,9 @@ import android.widget.Toast;
 
 import com.markuione.R;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by anish on 24-11-2017.
  */
@@ -27,9 +30,11 @@ public class MaterialYearPicker extends Dialog {
     private android.widget.ImageView imgLeft;
     private android.widget.TextView txtTitle;
     private android.widget.ImageView imgRight;
+    private YearSelectionListener yearSelectionListener;
 
-    public MaterialYearPicker(@NonNull Context context) {
+    public MaterialYearPicker(@NonNull Context context, YearSelectionListener yearSelectionListener) {
         super(context);
+        this.yearSelectionListener = yearSelectionListener;
         this.context = context;
         init();
     }
@@ -67,8 +72,8 @@ public class MaterialYearPicker extends Dialog {
         yearAdapter = new YearAdapter(context, new YearAdapter.YearSelectionListener() {
             @Override
             public void onYearSelected(int selectedYear) {
-                Toast.makeText(context, "selected Year :" + selectedYear, Toast.LENGTH_SHORT).show();
-//                dismiss();
+                yearSelectionListener.onYearSelected(selectedYear);
+                dismiss();
             }
         });
         rvYears.setLayoutManager(new GridLayoutManager(context, 3));
@@ -85,6 +90,10 @@ public class MaterialYearPicker extends Dialog {
         lp.gravity = Gravity.CENTER;
         getWindow().setAttributes(lp);
         this.setCanceledOnTouchOutside(true);
+    }
+
+    public interface YearSelectionListener {
+        void onYearSelected(int selectedYear);
     }
 
 }

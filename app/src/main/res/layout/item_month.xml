@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:padding="18dp"
-        android:text="@string/_2017"
+        android:text="@string/may"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="18sp" />
 </LinearLayout>

@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.markuione.R;
@@ -20,6 +19,7 @@ import java.util.List;
  */
 
 public class YearAdapter extends RecyclerView.Adapter<YearAdapter.YearHolder> {
+    private int lastClickedPosition = -1;//very helpful for removing last selection in in list
     private Context context;
     private List<Integer> yearList;
     private YearSelectionListener yearSelectionListener;
@@ -31,6 +31,13 @@ public class YearAdapter extends RecyclerView.Adapter<YearAdapter.YearHolder> {
         this.yearSelectionListener = yearSelectionListener;
         keepDefaultList();
     }
+
+    public YearAdapter(Context context, List<Integer> yearList, YearSelectionListener yearSelectionListener) {
+        this.context = context;
+        this.yearList = yearList;
+        this.yearSelectionListener = yearSelectionListener;
+        setItems(this.yearList);
+    }// this is for list of years of your choice
 
     private void keepDefaultList() {
         yearList = new ArrayList<>();
@@ -63,19 +70,24 @@ public class YearAdapter extends RecyclerView.Adapter<YearAdapter.YearHolder> {
         } else {
             holder.txtYear.setBackground(null);
         }
+        if (position == lastClickedPosition) {
+            holder.txtYear.setBackground(context.getResources().getDrawable(R.drawable.bg_rectangle_filled));
+            yearSelectionListener.onYearSelected(yearList.get(holder.getAdapterPosition()));
+        }
         holder.txtYear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.txtYear.setBackground(context.getResources().getDrawable(R.drawable.bg_rectangle_filled));
-                yearSelectionListener.onYearSelected(yearList.get(holder.getAdapterPosition()));
+                lastClickedPosition = holder.getAdapterPosition();
+                notifyDataSetChanged();
             }
         });
 
     }
 
     public void setYears(boolean isForward) {
+        lastClickedPosition = -1;
         int firstItem = yearList.get(0);
-        int lastItem = yearList.get(8);
+        int lastItem = yearList.get(yearList.size() - 1);
         yearList = new ArrayList<>();
         if (isForward) {
             int firstYear = lastItem + 1;
@@ -107,7 +119,7 @@ public class YearAdapter extends RecyclerView.Adapter<YearAdapter.YearHolder> {
 
         public YearHolder(View itemView) {
             super(itemView);
-            txtYear = itemView.findViewById(R.id.txtYear);
+            txtYear = itemView.findViewById(R.id.txtMonth);
         }
     }
 
